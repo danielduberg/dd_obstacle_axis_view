@@ -1,5 +1,5 @@
-#ifndef NAV_GOAL_DD_Q_COMBO_BOX_H
-#define NAV_GOAL_DD_Q_COMBO_BOX_H
+#ifndef DD_OBSTACLE_AXIS_VIEW_Q_COMBO_BOX_H
+#define DD_OBSTACLE_AXIS_VIEW_Q_COMBO_BOX_H
 
 #ifndef Q_MOC_RUN
 #include <ros/ros.h>
@@ -21,4 +21,4 @@ public:
 };
 }
 
-#endif // NAV_GOAL_DD_Q_COMBO_BOX_H
+#endif // DD_OBSTACLE_AXIS_VIEW_Q_COMBO_BOX_H

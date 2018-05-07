@@ -145,11 +145,13 @@ include_directories(
 
 set(SOURCE_FILES
   src/dd_obstacle_axis_view.cpp
+  src/view_widget.cpp
   src/dd_q_combo_box.cpp
 )
 
 set(HEADER_FILES
   include/dd_obstacle_axis_view/dd_obstacle_axis_view.h
+  include/dd_obstacle_axis_view/view_widget.h
   include/dd_obstacle_axis_view/dd_q_combo_box.h
 )
 

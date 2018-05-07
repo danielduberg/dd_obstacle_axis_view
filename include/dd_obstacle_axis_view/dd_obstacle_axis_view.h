@@ -1,5 +1,5 @@
-#ifndef DD_NAV_GOAL_PANEL_H
-#define DD_NAV_GOAL_PANEL_H
+#ifndef DD_OBSTACLE_AXIS_VIEW_PANEL_H
+#define DD_OBSTACLE_AXIS_VIEW_PANEL_H
 
 #ifndef Q_MOC_RUN
 #include <ros/ros.h>
@@ -98,4 +98,4 @@ protected:
 };
 }
 
-#endif // DD_NAV_GOAL_PANEL_H
+#endif // DD_OBSTACLE_AXIS_VIEW_PANEL_H
