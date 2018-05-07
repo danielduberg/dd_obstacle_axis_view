@@ -1,0 +1,9 @@
+<library path="lib/libdd_obstacle_axis_view">
+  <class name="dd_obstacle_axis_view/Obstacle Axis View"
+         type="dd_obstacle_axis_view::DDObstacleAxisViewPanel"
+         base_class_type="rviz::Panel">
+    <description>
+      A panel widget allowing...
+    </description>
+  </class>
+</library>
