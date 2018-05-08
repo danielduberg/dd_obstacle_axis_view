@@ -62,23 +62,28 @@ DDObstacleAxisViewPanel::DDObstacleAxisViewPanel(QWidget* parent)
   slam_altitude_ = new QLabel;
 
   layout = new QGridLayout();
-  layout->addWidget(new QLabel("Input 2D Nav Goal Topic:"), 0, 0, 1, 1);
-  layout->addWidget(nav_goal_2d_in_topic_menu_, 0, 1, 1, 3);
-  layout->addWidget(new QLabel("Output 3D Nav Goal Topic:"), 1, 0, 1, 1);
-  layout->addWidget(nav_goal_3d_out_topic_editor_, 1, 1, 1, 3);
-  layout->addWidget(new QLabel("Max altitude:"), 2, 0);
-  layout->addWidget(max_z_value_, 2, 2, 1, 2);
-  layout->addWidget(z_slider_, 3, 2, 5, 1);
-  layout->addWidget(new QLabel("Setpoint altitude:"), 5, 0);
-  layout->addWidget(current_z_value_, 5, 1);
-  layout->addWidget(new QLabel("PX4 altitude:"), 6, 0);
-  layout->addWidget(px4_altitude_, 6, 1);
-  layout->addWidget(new QLabel("SLAM altitude:"), 7, 0);
-  layout->addWidget(slam_altitude_, 7, 1);
-  layout->addWidget(new QLabel("Min altitude:"), 8, 0);
-  layout->addWidget(min_z_value_, 8, 2, 1, 2);
-  layout->addWidget(cancel_setpoint_, 9, 1);
-  layout->addWidget(republish_setpoint_, 9, 2);
+//  layout->addWidget(new QLabel("Input 2D Nav Goal Topic:"), 0, 0, 1, 1);
+//  layout->addWidget(nav_goal_2d_in_topic_menu_, 0, 1, 1, 3);
+//  layout->addWidget(new QLabel("Output 3D Nav Goal Topic:"), 1, 0, 1, 1);
+//  layout->addWidget(nav_goal_3d_out_topic_editor_, 1, 1, 1, 3);
+//  layout->addWidget(new QLabel("Max altitude:"), 2, 0);
+//  layout->addWidget(max_z_value_, 2, 2, 1, 2);
+//  layout->addWidget(z_slider_, 3, 2, 5, 1);
+//  layout->addWidget(new QLabel("Setpoint altitude:"), 5, 0);
+//  layout->addWidget(current_z_value_, 5, 1);
+//  layout->addWidget(new QLabel("PX4 altitude:"), 6, 0);
+//  layout->addWidget(px4_altitude_, 6, 1);
+//  layout->addWidget(new QLabel("SLAM altitude:"), 7, 0);
+//  layout->addWidget(slam_altitude_, 7, 1);
+//  layout->addWidget(new QLabel("Min altitude:"), 8, 0);
+//  layout->addWidget(min_z_value_, 8, 2, 1, 2);
+//  layout->addWidget(cancel_setpoint_, 9, 1);
+//  layout->addWidget(republish_setpoint_, 9, 2);
+
+  view_ = new ViewWidget;
+
+  layout->addWidget(view_, 0, 0, 5, 5);
+
   setLayout(layout);
 
   // Next we make signal/slot connections.

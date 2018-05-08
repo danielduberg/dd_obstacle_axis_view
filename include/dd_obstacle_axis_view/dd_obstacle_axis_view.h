@@ -16,6 +16,7 @@
 #include <geometry_msgs/PoseStamped.h>
 
 #include <dd_obstacle_axis_view/dd_q_combo_box.h>
+#include <dd_obstacle_axis_view/view_widget.h>
 
 class QLineEdit;
 
@@ -82,6 +83,8 @@ protected:
   
   QLabel* px4_altitude_;
   QLabel* slam_altitude_;
+
+  ViewWidget* view_;
 
   // The ROS node handle.
   ros::NodeHandle nh_;
