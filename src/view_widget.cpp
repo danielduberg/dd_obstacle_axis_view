@@ -7,7 +7,8 @@ namespace dd_obstacle_axis_view
 {
 ViewWidget::ViewWidget(QWidget* parent)
     : cloud_(new pcl::PointCloud<pcl::PointXYZ>), center_x_(0), center_y_(0),
-      min_x_(-1), max_x_(1), min_y_(-1), max_y_(1), scale_(40.0)
+      min_x_(-1), max_x_(1), min_y_(-1), max_y_(1), scale_(40.0),
+      left_button_pressed_(false), right_button_pressed_(false)
 {
 }
 
@@ -16,14 +17,36 @@ void ViewWidget::mouseMoveEvent(QMouseEvent* event)
   // TODO: Implement
   std::cout << "Mouse move event" << std::endl;
 
+  if (event->buttons() == Qt::RightButton)
+  {
+    // event->
+  }
+
+  std::cout << "[" << event->localPos().x() << ", " << event->localPos().y()
+            << "], [" << event->pos().rx() << ", " << event->pos().ry()
+            << "], [" << event->globalPos().rx() << ", "
+            << event->globalPos().ry() << "]" << std::endl;
+
   event->accept();
-  update();
+  // update();
 }
 
 void ViewWidget::mousePressEvent(QMouseEvent* event)
 {
   // TODO: Implement
   std::cout << "Mouse press event" << std::endl;
+
+  if (event->buttons() == Qt::LeftButton)
+  {
+    left_button_pressed_ = true;
+    left_button_pos_ = event->globalPos();
+  }
+
+  if (event->buttons() == Qt::RightButton)
+  {
+    right_button_pressed_ = true;
+    right_button_pos_ = event->globalPos();
+  }
 
   event->accept();
   update();
@@ -36,6 +59,25 @@ void ViewWidget::mouseReleaseEvent(QMouseEvent* event)
 
   event->accept();
   update();
+}
+
+void ViewWidget::mouseDoubleClickEvent(QMouseEvent* event)
+{
+  // TODO: Implement
+  if (event->buttons() == Qt::LeftButton)
+  {
+    double span_x = max_x_ - min_x_;
+    double span_y = max_y_ - min_y_;
+
+    max_x_ = span_x / 2.0;
+    min_x_ = -max_x_;
+
+    max_y_ = span_y / 2.0;
+    min_y_ = -max_y_;
+
+    event->accept();
+    update();
+  }
 }
 
 void ViewWidget::leaveEvent(QEvent* event)

@@ -26,6 +26,11 @@ private:
 
   double scale_;
 
+  bool left_button_pressed_;
+  bool right_button_pressed_;
+  QPoint left_button_pos_;
+  QPoint right_button_pos_;
+
 public:
   ViewWidget(QWidget* parent = 0);
 
@@ -34,6 +39,8 @@ public:
   virtual void mousePressEvent(QMouseEvent* event);
 
   virtual void mouseReleaseEvent(QMouseEvent* event);
+
+  virtual void mouseDoubleClickEvent(QMouseEvent* event);
 
   virtual void leaveEvent(QEvent* event);
 
